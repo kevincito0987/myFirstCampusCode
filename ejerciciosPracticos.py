@@ -124,49 +124,89 @@
 #for i in range(1, numero+1, 2):
  #   print(i, end=", ")
  
+ #Escribir un programa que pida al usuario un número entero positivo y muestre por pantalla la cuenta atrás desde ese número hasta cero separados por comas.
+#print("Programa para que veas en pantalla la cuenta atras del número que ingresaste.") 
+#num = int(input("Ingrese un número entero positivo: "))
+
+#for i in range(num, 0, -1):
+ #    print(i ,end=",")
  
+ #Escribir un programa que pregunte al usuario una cantidad a invertir, el interés anual y el número de años, y muestre por pantalla el capital obtenido en la inversión cada año que dura la inversión.
+
+print("En este programa podras calcular capital obtenido en $ en la inversión cada año que dura la inversión")
+cpi = int(input("Ingrese el capital con el que vas a empezar en pesos colombianos: "))
+ti = int(input("Ingrese el porcentaje de interes con el que vas a empezar: "))
+tic = ti / 100
+tiempo = int(input("Ingrese numero de años con los que vas a empezar: "))
+toi = input("Ingrese tipo de interes de tu inversion C para compuesto y S para simple: ")
+
+def calcular_capital_inversion(capital_inicial, tasa_interes, num_anos, tipo_interes):
+
+  capital_final = []
+  for ano in range(1, num_anos + 1):
+    if tipo_interes == "S":
+      intereses = capital_inicial * tasa_interes * ano
+      capital_final.append(capital_inicial + intereses)
+    elif tipo_interes == "C":
+      capital_final.append(capital_inicial * (1 + tasa_interes) ** ano)
+    else: print("La opción que ingresaste no esta dentro del programa")
+  return capital_final
+
+dinero_obtenido = calcular_capital_inversion(cpi, tic, tiempo, toi)
+print(f"El dinero que vas a obtener después de {tiempo} es de: {dinero_obtenido}")
  
  #Programa en fucion a una calculadora.
  
-print("Con este programa vas a hacer +-*/ sea cual sea tu caso.")
+#print("Con este programa vas a hacer +-*/ sea cual sea tu caso.")
 
-
-def calculadora (operacion, num1, num2):
+#def calculadora (operacion, num1, num2):
     
-  if operacion == "+":
-      suma = num1+num2
-      print(f"El resultado de la suma es de: {suma}")
-  elif operacion == "-":
-      resta = num1 - num2
-      print(f"El resultado de la resta es de: {resta}")
-  elif operacion == "*":
-      multiplicacion = num1 * num2
-      print(f"El resultado de la multiplicación es de: {multiplicacion}")
-  elif operacion == "/":
-      division = num1 / num2
-      print(f"El resultado de la division es de: {division}")
-  else : print("La operación que se seleccionó no esta dentro de las opciones programadas.")
-  return calculadora
+ # if operacion == "+":
+  #    suma = num1+num2
+   #   print(f"El resultado de la suma es de: {suma}")
+  #elif operacion == "-":
+   #   resta = num1 - num2
+    #  print(f"El resultado de la resta es de: {resta}")
+  #elif operacion == "*":
+   #   multiplicacion = num1 * num2
+    #  print(f"El resultado de la multiplicación es de: {multiplicacion}")
+ # elif operacion == "/":
+  #    division = num1 / num2
+   #   print(f"El resultado de la division es de: {division}")
+  #else : print("La operación que se seleccionó no esta dentro de las opciones programadas.")
+  #return calculadora
 
-resultado1 = calculadora("/", 23, 12)
-resultado2 = calculadora(num2=23,operacion= "*" ,num1=12)   
+#resultado1 = calculadora("/", 23, 12)
+#resultado2 = calculadora(num2=23,operacion= "*" ,num1=12)   
     
     
 #Ejercicio clase y review (Funciones):
 #Escribir una función que reciba un número entero positivo y devuelva su factorial.
-print("Programa para hallar el factorial de un número.")
+#print("Programa para hallar el factorial de un número.")
 
-factorial = int(input("Por favor escribe un número entero: "))
-multiplicaciones = []
-# el número que has escogido de entrada será el que se calcule como factorial
-count = 1 # este es un contador que nos permitirá hacer las multiplicaciones sucesivas
-for multipler in range(1,factorial+1): # el ciclo realiza la serie de multiplicaciones hasta el numero ingresado
-  count = count*multipler
-  multiplicaciones.append(count)
-  print(*multiplicaciones)
+#def solicitar_numero():
+ #   while True:
+  #      try:
+   #         numero = int(input("Ingrese un número entero positivo: "))
+    #        if numero >= 0:
+     #           return numero
+      #      else:
+       #         print("Por favor, ingrese un número entero no negativo.")
+       # except ValueError:
+        #    print("Entrada inválida. Por favor, ingrese un número entero.")
 
+#numero = solicitar_numero()
 
+#def factorial_iterativo(n):
+ # if n == 0:
+  #  factorial = 1
+  #  return 1
+  #for i in range(1, n + 1):
+   # factorial *= i
+  #return factorial
 
+#resultado = factorial_iterativo(numero)
+#print(f"El resultado de factorial de: {numero} es de {resultado}")
 #Escribir una función que calcule el total de una factura tras aplicarle el IVA. La función debe recibir la cantidad sin IVA y el porcentaje de IVA a aplicar, y devolver el total de la factura. Si se invoca la función sin pasarle el porcentaje de IVA, deberá aplicar un 21%.
 #Escribir una función que calcule el área de un círculo y otra que calcule el volumen de un cilindro usando la primera función.
 #Escribir una función que calcule el máximo común divisor de dos números y otra que calcule el mínimo común múltiplo.
