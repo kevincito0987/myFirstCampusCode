@@ -181,35 +181,45 @@
 #con_i = contraseña()
 
 #Escribir un programa que pida al usuario un número entero y muestre por pantalla si es un número primo o no.
-def solicitar_numero():
-    while True:
-        try:
-            numero = int(input("Ingrese un número entero positivo: "))
-            if numero >= 0:
-                return numero
-            else:
-                print("Por favor, ingrese un número entero no negativo.")
-        except ValueError:
-            print("Entrada inválida. Por favor, ingrese un número entero.")
-numero = solicitar_numero()
-def es_primo(numero):
-  if numero <= 1:
-    return False
-  if numero <= 3:
-    return True
-  if numero % 2 == 0 or numero % 3 == 0:
-    return False
-  i = 5
-  while i * i <= numero:
-    if numero % i == 0 or numero % (i + 2) == 0:
-      return False
-    i += 6
-  return True
+#def solicitar_numero():
+ #   while True:
+  #      try:
+   #         numero = int(input("Ingrese un número entero positivo: "))
+    #        if numero >= 0:
+     #           return numero
+      #      else:
+       #         print("Por favor, ingrese un número entero no negativo.")
+        #except ValueError:
+         #   print("Entrada inválida. Por favor, ingrese un número entero.")
+#numero = solicitar_numero()
+#def es_primo(numero):
+ # if numero <= 1:
+  #  return False
+  #if numero <= 3:
+   # return True
+  #if numero % 2 == 0 or numero % 3 == 0:
+   # return False
+  #i = 5
+  #while i * i <= numero:
+   # if numero % i == 0 or numero % (i + 2) == 0:
+    #  return False
+    #i += 6
+  #return True
 
-if es_primo(numero):
-  print(numero, "es un número primo.")
-else:
-  print(numero, "no es un número primo.")
+#if es_primo(numero):
+ # print(numero, "es un número primo.")
+#else:
+ # print(numero, "no es un número primo.")
+  
+#Escribir un programa que pida al usuario una palabra y luego muestre por pantalla una a una las letras de la palabra introducida empezando por la última.
+  
+palabra = input("Ingrese una palabra: ")
+
+# Invertimos la palabra para mostrar las letras desde la última
+palabra_invertida = palabra[::-1]
+
+# Recorremos la palabra invertida y mostramos cada letra
+print("".join(palabra_invertida))
 #print("Con este programa vas a hacer +-*/ sea cual sea tu caso.")
 
 #def calculadora (operacion, num1, num2):
