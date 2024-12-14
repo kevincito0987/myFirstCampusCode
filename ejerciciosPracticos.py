@@ -234,11 +234,11 @@
 #print("La letra", letra, "aparece", contador, "veces en la frase.")
 
 #Escribir un programa que muestre el eco de todo lo que el usuario introduzca hasta que el usuario escriba “salir” que terminará.
-while True:
-    texto = input("Escribe algo (o 'salir' para terminar): ")
-    if texto.lower() == "salir":
-        break
-    print(texto)
+#while True:
+ #   texto = input("Escribe algo (o 'salir' para terminar): ")
+  #  if texto.lower() == "salir":
+   #     break
+    #print(texto)
 #print("Con este programa vas a hacer +-*/ sea cual sea tu caso.")
 
 #def calculadora (operacion, num1, num2):
@@ -290,6 +290,41 @@ while True:
 #resultado = factorial_iterativo(numero)
 #print(f"El resultado de factorial de: {numero} es de {resultado}")
 #Escribir una función que calcule el total de una factura tras aplicarle el IVA. La función debe recibir la cantidad sin IVA y el porcentaje de IVA a aplicar, y devolver el total de la factura. Si se invoca la función sin pasarle el porcentaje de IVA, deberá aplicar un 21%.
+def solicitar_precio():
+    while True:
+        try:
+            numero = float(input("Ingrese el precio del producto: "))
+            if numero >= 0:
+                break
+            else:
+                print("Por favor, ingrese un número entero no negativo.")
+        except ValueError:
+            print("Entrada inválida. Por favor, ingrese un número entero.")
+    return numero
+
+def solicitar_iva():
+    while True:
+        try:
+            tasa_iva = float(input("Ingrese la tasa de IVA (en formato decimal): "))
+            if tasa_iva >= 0:
+                break
+            else:
+                print("Por favor, ingrese un número entero no negativo.")
+        except ValueError:
+            print("Entrada inválida. Por favor, ingrese un número entero.")
+    return tasa_iva
+
+def calcular_precio_con_iva(precio_producto, tasa_iva):
+    iva = tasa_iva * precio_producto / 100
+    precio_final = precio_producto + iva
+    return precio_final
+
+# Ejemplo de uso:
+precio_producto = solicitar_precio()
+tasa_iva = solicitar_iva()
+
+precio_total = calcular_precio_con_iva(precio_producto, tasa_iva)
+print(f"El precio total con IVA es: {precio_total}")
 #Escribir una función que calcule el área de un círculo y otra que calcule el volumen de un cilindro usando la primera función.
 #Escribir una función que calcule el máximo común divisor de dos números y otra que calcule el mínimo común múltiplo.
 #Escribir un programa que reciba una cadena de caracteres e imprima el tamaño de la cadena, la cadena en mayusculas, la cadena en minusculas, la cadena invertida y la segunda mitad de la cadena.
