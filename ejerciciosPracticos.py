@@ -1,28 +1,3 @@
-#Ejercicio 1 del curso de python de soy Dalto
-
-#Parte 1: Diferencia de porcentaje entre el curso actual y: -el más rápido de otros cursos. -el más lento de otros cursos. - el promedio de los cursos.
-
-#min_curso = 2.5 
-#max_curso = 7
-#promedio_curso = 4
-#curso_actual = 1.5
-
-#Haciendo la diferencia.
-
-#if curso_actual < min_curso and curso_actual < min_curso and curso_actual < promedio_curso :
- #   print("El curso actual es el más rápido")
-#elif min_curso <= curso_actual and min_curso < max_curso and min_curso <= promedio_curso :
-#    print("El curso de promedio minimo se encuentra entre el promedio y el curso de dalto")
-#else : print("Este curso es el más lento de todos")
-
-#Parte 2: Calculando el material basura de otros cursos.
-
-#basura_cursos = promedio_curso - curso_actual
-
-#print(f"La basura que hay en otros cursos es de: {basura_cursos} horas.")
-
-#print("Opino que ver un curso con este profe nos hace la nasa xdxdxdxdxddd.")
-
 #Escribir un programa que almacene la cadena de caracteres contraseña en una variable, pregunte al usuario por la contraseña e imprima por pantalla si la contraseña introducida por el usuario coincide con la guardada en la variable sin tener en cuenta mayúsculas y minúsculas.
 
 #import getpass
@@ -416,40 +391,78 @@
 #print("El máximo común divisor de", num1, "y", num2, "es:", resultado_mcd)
 #print("El mínimo común múltiplo de", num1, "y", num2, "es:", resultado_mcm)
 #Escribir un programa que reciba una cadena de caracteres e imprima el tamaño de la cadena, la cadena en mayusculas, la cadena en minusculas, la cadena invertida y la segunda mitad de la cadena.
-def manipular_cadena(cadena):
+#def manipular_cadena(cadena):
 
   # Tamaño de la cadena
-  tamaño = len(cadena)
-  print("El tamaño de la cadena es:", tamaño)
+ # tamaño = len(cadena)
+  #print("El tamaño de la cadena es:", tamaño)
 
   # Cadena en mayúsculas
-  mayusculas = cadena.upper()
-  print("La cadena en mayúsculas es:", mayusculas)
+  #mayusculas = cadena.upper()
+  #print("La cadena en mayúsculas es:", mayusculas)
 
   # Cadena en minúsculas
-  minusculas = cadena.lower()
-  print("La cadena en minúsculas es:", minusculas)
+  #minusculas = cadena.lower()
+  #print("La cadena en minúsculas es:", minusculas)
 
   # Cadena invertida
-  invertida = cadena[::-1]
-  print("La cadena invertida es:", invertida)
+  #invertida = cadena[::-1]
+  #print("La cadena invertida es:", invertida)
 
   # Segunda mitad de la cadena
-  mitad = len(cadena) // 2
-  segunda_mitad = cadena[mitad:]
-  print("La segunda mitad de la cadena es:", segunda_mitad)
-def solicitar_cadena_solo_letras():
-    while True:
-        cadena = input("Ingrese una cadena que contenga solo letras: ")
-        if cadena.isalpha():
-            return cadena
-        else:
-            print("Entrada inválida. Por favor, ingrese solo letras.")
+  #mitad = len(cadena) // 2
+  #segunda_mitad = cadena[mitad:]
+  #print("La segunda mitad de la cadena es:", segunda_mitad)
+#def solicitar_cadena_solo_letras():
+  #  while True:
+   #     cadena = input("Ingrese una cadena que contenga solo letras: ")
+    #    if cadena.isalpha():
+     #       return cadena
+     #   else:
+      #      print("Entrada inválida. Por favor, ingrese solo letras.")
 
 # Ejemplo de uso:
-cadena_valida = solicitar_cadena_solo_letras()
-print("La cadena ingresada es:", cadena_valida)
+#cadena_valida = solicitar_cadena_solo_letras()
+#print("La cadena ingresada es:", cadena_valida)
 # Llamamos a la función para manipular la cadena
-manipular_cadena(cadena_valida)
+#manipular_cadena(cadena_valida)
 #Crea una función que ordene y retorne una lista o vector de números. La función recibirá un listado (por ejemplo [2, 4, 6, 8, 9]) y un parámetro adicional "Asc" o "Desc" para indicar si debe ordenarse de menor a mayor o de mayor a menor.  No se pueden utilizar funciones incorporadas que lo resuelvan automáticamente.
-#Dado un listado de números, encuentra el SEGUNDO más grande
+def ordenar_burbuja(lista, orden):
+    n = len(lista)
+    for i in range(n):
+        for j in range(0, n-i-1):
+            if (orden == "Asc" and lista[j] > lista[j+1]) or (orden == "Desc" and lista[j] < lista[j+1]):
+                lista[j], lista[j+1] = lista[j+1], lista[j]
+
+def obtener_entrada_valida():
+    while True:
+        try:
+            lista_str = input("Ingrese los números separados por comas: ")
+            lista = [int(num) for num in lista_str.split(',')]
+            # Validación adicional: si la conversión a int falla, se levantará una excepción
+            return lista
+        except ValueError:
+            print("Entrada inválida. Por favor, ingrese solo números separados por comas.")
+
+# Obtener la lista del usuario
+lista = obtener_entrada_valida()
+
+# Resto del código... (ordenamiento, etc.)
+
+# Obtener el orden de ordenamiento
+orden = input("Ingrese 'Asc' para ordenar ascendente o 'Desc' para descendente: ")
+
+# Validar el orden
+while orden not in ["Asc", "Desc"]:
+    print("Orden inválido. Por favor, ingrese 'Asc' o 'Desc'.")
+    orden = input("Ingrese 'Asc' para ordenar ascendente o 'Desc' para descendente: ")
+
+# Ordenar la lista
+ordenar_burbuja(lista, orden)
+
+# Imprimir la lista ordenada con un mensaje descriptivo
+if orden == "Asc":
+    print("La lista ordenada de menor a mayor es:", lista)
+else:
+    print("La lista ordenada de mayor a menor es:", lista)
+#Dado un listado de números, encuentra el SEGUNDO más grande 
