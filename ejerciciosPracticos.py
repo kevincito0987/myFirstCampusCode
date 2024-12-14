@@ -213,13 +213,25 @@
   
 #Escribir un programa que pida al usuario una palabra y luego muestre por pantalla una a una las letras de la palabra introducida empezando por la última.
   
-palabra = input("Ingrese una palabra: ")
+#palabra = input("Ingrese una palabra: ")
 
 # Invertimos la palabra para mostrar las letras desde la última
-palabra_invertida = palabra[::-1]
+#palabra_invertida = palabra[::-1]
 
 # Recorremos la palabra invertida y mostramos cada letra
-print("".join(palabra_invertida))
+#print("".join(palabra_invertida))
+
+frase = input("Ingrese una frase: ")
+letra = input("Ingrese una letra: ")
+
+# Convertimos tanto la frase como la letra a minúsculas para evitar problemas de mayúsculas y minúsculas
+frase = frase.lower()
+letra = letra.lower()
+
+# Contamos las ocurrencias de la letra en la frase
+contador = frase.count(letra)
+
+print("La letra", letra, "aparece", contador, "veces en la frase.")
 #print("Con este programa vas a hacer +-*/ sea cual sea tu caso.")
 
 #def calculadora (operacion, num1, num2):
