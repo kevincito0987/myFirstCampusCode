@@ -157,14 +157,59 @@
 
 #Escribir un programa que muestre por pantalla la tabla de multiplicar del 1 al 10.
 
-numero = int(input("Ingrese un número: "))
+#numero = int(input("Ingrese un número: "))
 # Ciclo for para iterar del 1 al 10
-for i in range(1, 11):
-    resultado = numero * i
-    print(f"{numero} x {i} = {resultado}")
- 
- #Programa en fucion a una calculadora.
- 
+#for i in range(1, 11):
+ #   resultado = numero * i
+  #  print(f"{numero} x {i} = {resultado}")
+    
+#Escribir un programa que almacene la cadena de caracteres contraseña en una variable, pregunte al usuario por la contraseña hasta que introduzca la contraseña correcta.
+#import getpass
+#contraseña_campus = "campus2023"
+#def contraseña ():
+ # while True:
+  #      try:
+   #        con_u = getpass.getpass("Ingrese la contraseña de campus: ")
+    #       if con_u == contraseña_campus:
+     #          lonPassword = len(con_u)
+              # print(f"La contraseña ingresada es: {con_u} y tiene {lonPassword} de caracteres, esa es la contraseña correcta camper:).")
+               #return con_u
+           #else:
+            #    print("Esa no es la contraseña, vuelve a ingresarla.")
+       # except ValueError: print("Entrada inválida. Por favor, ingrese la contraseña correcta.")
+
+#con_i = contraseña()
+
+#Escribir un programa que pida al usuario un número entero y muestre por pantalla si es un número primo o no.
+def solicitar_numero():
+    while True:
+        try:
+            numero = int(input("Ingrese un número entero positivo: "))
+            if numero >= 0:
+                return numero
+            else:
+                print("Por favor, ingrese un número entero no negativo.")
+        except ValueError:
+            print("Entrada inválida. Por favor, ingrese un número entero.")
+numero = solicitar_numero()
+def es_primo(numero):
+  if numero <= 1:
+    return False
+  if numero <= 3:
+    return True
+  if numero % 2 == 0 or numero % 3 == 0:
+    return False
+  i = 5
+  while i * i <= numero:
+    if numero % i == 0 or numero % (i + 2) == 0:
+      return False
+    i += 6
+  return True
+
+if es_primo(numero):
+  print(numero, "es un número primo.")
+else:
+  print(numero, "no es un número primo.")
 #print("Con este programa vas a hacer +-*/ sea cual sea tu caso.")
 
 #def calculadora (operacion, num1, num2):
