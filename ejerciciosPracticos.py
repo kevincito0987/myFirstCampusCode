@@ -290,10 +290,72 @@
 #resultado = factorial_iterativo(numero)
 #print(f"El resultado de factorial de: {numero} es de {resultado}")
 #Escribir una función que calcule el total de una factura tras aplicarle el IVA. La función debe recibir la cantidad sin IVA y el porcentaje de IVA a aplicar, y devolver el total de la factura. Si se invoca la función sin pasarle el porcentaje de IVA, deberá aplicar un 21%.
-def solicitar_precio():
+#def solicitar_precio():
+ #   while True:
+  #      try:
+   #         numero = float(input("Ingrese el precio del producto: "))
+    #        if numero >= 0:
+     #           break
+      #      else:
+       #         print("Por favor, ingrese un número entero no negativo.")
+        #except ValueError:
+         #   print("Entrada inválida. Por favor, ingrese un número entero.")
+   # return numero
+
+#def solicitar_iva():
+ #   while True:
+  #      try:
+   #         tasa_iva = float(input("Ingrese la tasa de IVA (en formato decimal): "))
+    #        if tasa_iva >= 0:
+     #           break
+      #    else:
+       #         print("Por favor, ingrese un número entero no negativo.")
+        #except ValueError:
+         #   print("Entrada inválida. Por favor, ingrese un número entero.")
+    #return tasa_iva
+
+#def calcular_precio_con_iva(precio_producto, tasa_iva):
+ #   iva = tasa_iva * precio_producto / 100
+  #  precio_final = precio_producto + iva
+   # return precio_final
+
+# Ejemplo de uso:
+#precio_producto = solicitar_precio()
+#tasa_iva = solicitar_iva()
+
+#precio_total = calcular_precio_con_iva(precio_producto, tasa_iva)
+#print(f"El precio total con IVA es: {precio_total}")
+#Escribir una función que calcule el área de un círculo y otra que calcule el volumen de un cilindro usando la primera función.
+import math
+
+def area_circulo(radio):
+  
+  area = math.pi * radio**2
+  return area
+
+def volumen_cilindro(radio, altura): 
+  
+  # Calculamos el área de la base del cilindro
+  area_base = area_circulo(radio)
+  # Calculamos el volumen del cilindro
+  volumen = area_base * altura
+  return volumen
+
+def solicitar_radio_cilindro():
     while True:
         try:
-            numero = float(input("Ingrese el precio del producto: "))
+            numero = float(input("Ingrese el radio del cilindro: "))
+            if numero >= 0:
+                break
+            else:
+                print("Por favor, ingrese un número entero no negativo.")
+        except ValueError:
+            print("Entrada inválida. Por favor, ingrese un número entero.")
+    return numero
+def solicitar_altura_cilindro():
+    while True:
+        try:
+            numero = float(input("Ingrese la altura del cilindro: "))
             if numero >= 0:
                 break
             else:
@@ -302,30 +364,15 @@ def solicitar_precio():
             print("Entrada inválida. Por favor, ingrese un número entero.")
     return numero
 
-def solicitar_iva():
-    while True:
-        try:
-            tasa_iva = float(input("Ingrese la tasa de IVA (en formato decimal): "))
-            if tasa_iva >= 0:
-                break
-            else:
-                print("Por favor, ingrese un número entero no negativo.")
-        except ValueError:
-            print("Entrada inválida. Por favor, ingrese un número entero.")
-    return tasa_iva
-
-def calcular_precio_con_iva(precio_producto, tasa_iva):
-    iva = tasa_iva * precio_producto / 100
-    precio_final = precio_producto + iva
-    return precio_final
-
 # Ejemplo de uso:
-precio_producto = solicitar_precio()
-tasa_iva = solicitar_iva()
+radio_cilindro = solicitar_radio_cilindro()
+altura_cilindro = solicitar_altura_cilindro()
 
-precio_total = calcular_precio_con_iva(precio_producto, tasa_iva)
-print(f"El precio total con IVA es: {precio_total}")
-#Escribir una función que calcule el área de un círculo y otra que calcule el volumen de un cilindro usando la primera función.
+area_base = area_circulo(radio_cilindro)
+volumen = volumen_cilindro(radio_cilindro, altura_cilindro)
+
+print("El área de la base del cilindro es:", area_base)
+print("El volumen del cilindro es:", volumen)
 #Escribir una función que calcule el máximo común divisor de dos números y otra que calcule el mínimo común múltiplo.
 #Escribir un programa que reciba una cadena de caracteres e imprima el tamaño de la cadena, la cadena en mayusculas, la cadena en minusculas, la cadena invertida y la segunda mitad de la cadena.
 #Crea una función que ordene y retorne una lista o vector de números. La función recibirá un listado (por ejemplo [2, 4, 6, 8, 9]) y un parámetro adicional "Asc" o "Desc" para indicar si debe ordenarse de menor a mayor o de mayor a menor.  No se pueden utilizar funciones incorporadas que lo resuelvan automáticamente.
