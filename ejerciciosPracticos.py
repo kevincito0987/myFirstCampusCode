@@ -133,27 +133,35 @@
  
  #Escribir un programa que pregunte al usuario una cantidad a invertir, el interés anual y el número de años, y muestre por pantalla el capital obtenido en la inversión cada año que dura la inversión.
 
-print("En este programa podras calcular capital obtenido en $ en la inversión cada año que dura la inversión")
-cpi = int(input("Ingrese el capital con el que vas a empezar en pesos colombianos: "))
-ti = int(input("Ingrese el porcentaje de interes con el que vas a empezar: "))
-tic = ti / 100
-tiempo = int(input("Ingrese numero de años con los que vas a empezar: "))
-toi = input("Ingrese tipo de interes de tu inversion C para compuesto y S para simple: ")
+#print("En este programa podras calcular capital obtenido en $ en la inversión cada año que dura la inversión")
+#cpi = int(input("Ingrese el capital con el que vas a empezar en pesos colombianos: "))
+#ti = int(input("Ingrese el porcentaje de interes con el que vas a empezar: "))
+#tic = ti / 100
+#tiempo = int(input("Ingrese numero de años con los que vas a empezar: "))
+#toi = input("Ingrese tipo de interes de tu inversion C para compuesto y S para simple: ")
 
-def calcular_capital_inversion(capital_inicial, tasa_interes, num_anos, tipo_interes):
+#def calcular_capital_inversion(capital_inicial, tasa_interes, num_anos, tipo_interes):
 
-  capital_final = []
-  for ano in range(1, num_anos + 1):
-    if tipo_interes == "S":
-      intereses = capital_inicial * tasa_interes * ano
-      capital_final.append(capital_inicial + intereses)
-    elif tipo_interes == "C":
-      capital_final.append(capital_inicial * (1 + tasa_interes) ** ano)
-    else: print("La opción que ingresaste no esta dentro del programa")
-  return capital_final
+ # capital_final = []
+  #for ano in range(1, num_anos + 1):
+   # if tipo_interes == "S":
+    #  intereses = capital_inicial * tasa_interes * ano
+     # capital_final.append(capital_inicial + intereses)
+    #elif tipo_interes == "C":
+     # capital_final.append(capital_inicial * (1 + tasa_interes) ** ano)
+    #else: print("La opción que ingresaste no esta dentro del programa")
+  #return capital_final
 
-dinero_obtenido = calcular_capital_inversion(cpi, tic, tiempo, toi)
-print(f"El dinero que vas a obtener después de {tiempo} es de: {dinero_obtenido}")
+#dinero_obtenido = calcular_capital_inversion(cpi, tic, tiempo, toi)
+#print(f"El dinero que vas a obtener después de {tiempo} es de: {dinero_obtenido}")
+
+#Escribir un programa que muestre por pantalla la tabla de multiplicar del 1 al 10.
+
+numero = int(input("Ingrese un número: "))
+# Ciclo for para iterar del 1 al 10
+for i in range(1, 11):
+    resultado = numero * i
+    print(f"{numero} x {i} = {resultado}")
  
  #Programa en fucion a una calculadora.
  
