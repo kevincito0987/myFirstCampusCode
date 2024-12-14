@@ -374,47 +374,82 @@
 #print("El área de la base del cilindro es:", area_base)
 #print("El volumen del cilindro es:", volumen)
 #Escribir una función que calcule el máximo común divisor de dos números y otra que calcule el mínimo común múltiplo.
-def mcd(a, b):
+#def mcd(a, b):
   
-  while b != 0:
-    a, b = b, a % b
-  return a
+ # while b != 0:
+  #  a, b = b, a % b
+ # return a
 
-def mcm(a, b):
+#def mcm(a, b):
 
-  return a * b // mcd(a, b)
+ # return a * b // mcd(a, b)
 
-def solicitar_num1():
-    while True:
-        try:
-            numero = float(input("Ingrese el primer numero: "))
-            if numero >= 0:
-                break
-            else:
-                print("Por favor, ingrese un número entero no negativo.")
-        except ValueError:
-            print("Entrada inválida. Por favor, ingrese un número entero.")
-    return numero
-def solicitar_num2():
-    while True:
-        try:
-            numero = float(input("Ingrese el segundo numero: "))
-            if numero >= 0:
-                break
-            else:
-                print("Por favor, ingrese un número entero no negativo.")
-        except ValueError:
-            print("Entrada inválida. Por favor, ingrese un número entero.")
-    return numero
+#def solicitar_num1():
+ #   while True:
+  #      try:
+   #         numero = float(input("Ingrese el primer numero: "))
+    #        if numero >= 0:
+     #           break
+      #      else:
+       #         print("Por favor, ingrese un número entero no negativo.")
+       # except ValueError:
+        #    print("Entrada inválida. Por favor, ingrese un número entero.")
+   # return numero
+#def solicitar_num2():
+ #   while True:
+  #      try:
+   #         numero = float(input("Ingrese el segundo numero: "))
+    #        if numero >= 0:
+     #           break
+      #      else:
+       #         print("Por favor, ingrese un número entero no negativo.")
+        #except ValueError:
+         #   print("Entrada inválida. Por favor, ingrese un número entero.")
+    #return numero
 # Ejemplo de uso:
-num1 = solicitar_num1()
-num2 = solicitar_num2()
+#num1 = solicitar_num1()
+#num2 = solicitar_num2()
 
-resultado_mcd = mcd(num1, num2)
-resultado_mcm = mcm(num1, num2)
+#resultado_mcd = mcd(num1, num2)
+#resultado_mcm = mcm(num1, num2)
 
-print("El máximo común divisor de", num1, "y", num2, "es:", resultado_mcd)
-print("El mínimo común múltiplo de", num1, "y", num2, "es:", resultado_mcm)
+#print("El máximo común divisor de", num1, "y", num2, "es:", resultado_mcd)
+#print("El mínimo común múltiplo de", num1, "y", num2, "es:", resultado_mcm)
 #Escribir un programa que reciba una cadena de caracteres e imprima el tamaño de la cadena, la cadena en mayusculas, la cadena en minusculas, la cadena invertida y la segunda mitad de la cadena.
+def manipular_cadena(cadena):
+
+  # Tamaño de la cadena
+  tamaño = len(cadena)
+  print("El tamaño de la cadena es:", tamaño)
+
+  # Cadena en mayúsculas
+  mayusculas = cadena.upper()
+  print("La cadena en mayúsculas es:", mayusculas)
+
+  # Cadena en minúsculas
+  minusculas = cadena.lower()
+  print("La cadena en minúsculas es:", minusculas)
+
+  # Cadena invertida
+  invertida = cadena[::-1]
+  print("La cadena invertida es:", invertida)
+
+  # Segunda mitad de la cadena
+  mitad = len(cadena) // 2
+  segunda_mitad = cadena[mitad:]
+  print("La segunda mitad de la cadena es:", segunda_mitad)
+def solicitar_cadena_solo_letras():
+    while True:
+        cadena = input("Ingrese una cadena que contenga solo letras: ")
+        if cadena.isalpha():
+            return cadena
+        else:
+            print("Entrada inválida. Por favor, ingrese solo letras.")
+
+# Ejemplo de uso:
+cadena_valida = solicitar_cadena_solo_letras()
+print("La cadena ingresada es:", cadena_valida)
+# Llamamos a la función para manipular la cadena
+manipular_cadena(cadena_valida)
 #Crea una función que ordene y retorne una lista o vector de números. La función recibirá un listado (por ejemplo [2, 4, 6, 8, 9]) y un parámetro adicional "Asc" o "Desc" para indicar si debe ordenarse de menor a mayor o de mayor a menor.  No se pueden utilizar funciones incorporadas que lo resuelvan automáticamente.
 #Dado un listado de números, encuentra el SEGUNDO más grande
