@@ -427,7 +427,7 @@
 # Llamamos a la función para manipular la cadena
 #manipular_cadena(cadena_valida)
 #Crea una función que ordene y retorne una lista o vector de números. La función recibirá un listado (por ejemplo [2, 4, 6, 8, 9]) y un parámetro adicional "Asc" o "Desc" para indicar si debe ordenarse de menor a mayor o de mayor a menor.  No se pueden utilizar funciones incorporadas que lo resuelvan automáticamente.
-def ordenar_burbuja(lista, orden):
+def ordenar_lista(lista, orden):
     n = len(lista)
     for i in range(n):
         for j in range(0, n-i-1):
@@ -447,8 +447,6 @@ def obtener_entrada_valida():
 # Obtener la lista del usuario
 lista = obtener_entrada_valida()
 
-# Resto del código... (ordenamiento, etc.)
-
 # Obtener el orden de ordenamiento
 orden = input("Ingrese 'Asc' para ordenar ascendente o 'Desc' para descendente: ")
 
@@ -458,7 +456,7 @@ while orden not in ["Asc", "Desc"]:
     orden = input("Ingrese 'Asc' para ordenar ascendente o 'Desc' para descendente: ")
 
 # Ordenar la lista
-ordenar_burbuja(lista, orden)
+ordenar_lista(lista, orden)
 
 # Imprimir la lista ordenada con un mensaje descriptivo
 if orden == "Asc":
