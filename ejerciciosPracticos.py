@@ -427,40 +427,61 @@
 # Llamamos a la función para manipular la cadena
 #manipular_cadena(cadena_valida)
 #Crea una función que ordene y retorne una lista o vector de números. La función recibirá un listado (por ejemplo [2, 4, 6, 8, 9]) y un parámetro adicional "Asc" o "Desc" para indicar si debe ordenarse de menor a mayor o de mayor a menor.  No se pueden utilizar funciones incorporadas que lo resuelvan automáticamente.
-def ordenar_lista(lista, orden):
-    n = len(lista)
-    for i in range(n):
-        for j in range(0, n-i-1):
-            if (orden == "Asc" and lista[j] > lista[j+1]) or (orden == "Desc" and lista[j] < lista[j+1]):
-                lista[j], lista[j+1] = lista[j+1], lista[j]
+#def ordenar_lista(lista, orden):
+ #   n = len(lista)
+  #  for i in range(n):
+   #     for j in range(0, n-i-1):
+    #        if (orden == "Asc" and lista[j] > lista[j+1]) or (orden == "Desc" and lista[j] < lista[j+1]):
+     #           lista[j], lista[j+1] = lista[j+1], lista[j]
 
-def obtener_entrada_valida():
-    while True:
-        try:
-            lista_str = input("Ingrese los números separados por comas: ")
-            lista = [int(num) for num in lista_str.split(',')]
+#def obtener_entrada_valida():
+ #   while True:
+  #      try:
+   #         lista_str = input("Ingrese los números separados por comas: ")
+    #        lista = [int(num) for num in lista_str.split(',')]
             # Validación adicional: si la conversión a int falla, se levantará una excepción
-            return lista
+     #       return lista
+      #  except ValueError:
+       #     print("Entrada inválida. Por favor, ingrese solo números separados por comas.")
+
+# Obtener la lista del usuario
+#lista = obtener_entrada_valida()
+
+# Obtener el orden de ordenamiento
+#orden = input("Ingrese 'Asc' para ordenar ascendente o 'Desc' para descendente: ")
+
+# Validar el orden
+#while orden not in ["Asc", "Desc"]:
+ #   print("Orden inválido. Por favor, ingrese 'Asc' o 'Desc'.")
+  #  orden = input("Ingrese 'Asc' para ordenar ascendente o 'Desc' para descendente: ")
+
+# Ordenar la lista
+#ordenar_lista(lista, orden)
+
+# Imprimir la lista ordenada con un mensaje descriptivo
+#if orden == "Asc":
+ #   print("La lista ordenada de menor a mayor es:", lista)
+#else:
+ #   print("La lista ordenada de mayor a menor es:", lista)
+#Dado un listado de números, encuentra el SEGUNDO más grande 
+def segundo_mas_grande():
+
+    while True:
+        numeros_str = input("Ingrese una lista de números separados por comas: ")
+        try:
+            numeros = [int(num) for num in numeros_str.split(',')]
+            # Verificamos si hay al menos dos números
+            if len(numeros) < 2:
+                print("Ingrese al menos dos números.")
+                continue
+
+            # Si llegamos aquí, la entrada es válida
+            numeros.sort(reverse=True)
+            return numeros[1]
+
         except ValueError:
             print("Entrada inválida. Por favor, ingrese solo números separados por comas.")
 
-# Obtener la lista del usuario
-lista = obtener_entrada_valida()
-
-# Obtener el orden de ordenamiento
-orden = input("Ingrese 'Asc' para ordenar ascendente o 'Desc' para descendente: ")
-
-# Validar el orden
-while orden not in ["Asc", "Desc"]:
-    print("Orden inválido. Por favor, ingrese 'Asc' o 'Desc'.")
-    orden = input("Ingrese 'Asc' para ordenar ascendente o 'Desc' para descendente: ")
-
-# Ordenar la lista
-ordenar_lista(lista, orden)
-
-# Imprimir la lista ordenada con un mensaje descriptivo
-if orden == "Asc":
-    print("La lista ordenada de menor a mayor es:", lista)
-else:
-    print("La lista ordenada de mayor a menor es:", lista)
-#Dado un listado de números, encuentra el SEGUNDO más grande 
+# Ejemplo de uso:
+segundo_mayor = segundo_mas_grande()
+print("El segundo número más grande es:", segundo_mayor)
