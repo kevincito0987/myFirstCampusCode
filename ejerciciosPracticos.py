@@ -221,17 +221,24 @@
 # Recorremos la palabra invertida y mostramos cada letra
 #print("".join(palabra_invertida))
 
-frase = input("Ingrese una frase: ")
-letra = input("Ingrese una letra: ")
+#frase = input("Ingrese una frase: ")
+#letra = input("Ingrese una letra: ")
 
 # Convertimos tanto la frase como la letra a minúsculas para evitar problemas de mayúsculas y minúsculas
-frase = frase.lower()
-letra = letra.lower()
+#frase = frase.lower()
+#letra = letra.lower()
 
 # Contamos las ocurrencias de la letra en la frase
-contador = frase.count(letra)
+#contador = frase.count(letra)
 
-print("La letra", letra, "aparece", contador, "veces en la frase.")
+#print("La letra", letra, "aparece", contador, "veces en la frase.")
+
+#Escribir un programa que muestre el eco de todo lo que el usuario introduzca hasta que el usuario escriba “salir” que terminará.
+while True:
+    texto = input("Escribe algo (o 'salir' para terminar): ")
+    if texto.lower() == "salir":
+        break
+    print(texto)
 #print("Con este programa vas a hacer +-*/ sea cual sea tu caso.")
 
 #def calculadora (operacion, num1, num2):
